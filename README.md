@@ -1,73 +1,107 @@
-# React + TypeScript + Vite
+# SquareView Technical Services Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, professional website for SquareView Technical Services - a UAE-based interior design and technical services company.
 
-Currently, two official plugins are available:
+## 🌐 Live Preview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**GitHub Repository:** https://github.com/inarashinzo/squareview-website
 
-## React Compiler
+**Deployed URL:** http://192.168.139.108:4173 (when deployed on Coolify)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **Framework:** React + Vite
+- **Routing:** TanStack Router
+- **Styling:** Tailwind CSS + ShadCN UI
+- **Data Fetching:** React Query
+- **Forms:** React Hook Form + Zod
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 📁 Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+squareview-website/
+├── src/
+│   ├── components/
+│   │   ├── ui/          # ShadCN-style UI components
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Services.tsx
+│   │   ├── About.tsx
+│   │   └── ContactForm.tsx
+│   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   ├── ServicesPage.tsx
+│   │   ├── AboutPage.tsx
+│   │   └── ContactPage.tsx
+│   ├── route-tree.tsx   # TanStack Router configuration
+│   └── main.tsx
+├── coolify.json         # Coolify deployment config
+├── Dockerfile           # Container deployment
+└── deploy.sh            # Deployment script
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Quick Start
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Development
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📦 Deployment
+
+### Option 1: Coolify (Recommended)
+
+1. Access Coolify at `http://192.168.139.108:8000`
+2. Create a new "Static" application
+3. Configure:
+   - Repository: `inarashinzo/squareview-website`
+   - Branch: `main`
+   - Build Command: `npm install && npm run build`
+   - Start Command: `npm run preview`
+   - Port: `4173`
+
+### Option 2: Docker
+
+```bash
+docker build -t squareview-website .
+docker run -p 80:80 squareview-website
+```
+
+### Option 3: Manual
+
+```bash
+npm install
+npm run build
+# Serve the dist folder with any static server
+npx serve dist
+```
+
+## 🎨 Design Features
+
+- **Hero Section:** High-impact visual with CTA buttons and stats
+- **Services Grid:** Card-based layout showcasing all 5 services
+- **Contact Form:** Validated form with localStorage for inquiries
+- **Responsive Design:** Mobile-first approach with mobile navigation
+- **Modern UI:** Clean typography, smooth animations, professional color scheme
+
+## 📞 Contact Information
+
+**SquareView Technical Services**
+- 📍 Dubai, United Arab Emirates
+- 📞 +971 50 000 0000
+- ✉️ info@squareview.ae
+- 🕐 Sat - Thu: 9:00 AM - 7:00 PM
+
+## 📝 License
+
+MIT License
