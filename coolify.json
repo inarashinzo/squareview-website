@@ -1,0 +1,17 @@
+{
+  "name": "squareview-website",
+  "repository": "inarashinzo/squareview-website",
+  "branch": "main",
+  "build_command": "npm install && npm run build",
+  "start_command": "npm run preview",
+  "port": 4173,
+  "domain": "squareview.ae",
+  "ssl": false,
+  "type": "static",
+  "node_version": "20",
+  "health_check": "/",
+  "cleanup_destination": true,
+  "environment": {
+    "NODE_ENV": "production"
+  }
+}
